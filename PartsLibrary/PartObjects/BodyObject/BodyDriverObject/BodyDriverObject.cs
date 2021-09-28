@@ -20,11 +20,13 @@ namespace PartsLibrary
         public short DiffuseTexture
         {
             get { return RecolorFlags.X; }
+            set { RecolorFlags = new Vector2S(value, RecolorFlags.Y); }
         }
 
         public short SpecularTexture
         {
             get { return RecolorFlags.Y; }
+            set { RecolorFlags = new Vector2S(RecolorFlags.X, value); }
         }
 
         public enum RecolorTexType : int

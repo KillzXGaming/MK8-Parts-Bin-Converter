@@ -169,7 +169,7 @@ namespace PartsEditor
                 {
                     Vector4B vec = (Vector4B)properties[i].GetValue(value);
                     byte[] bytes = new byte[4] { vec.X, vec.Y, vec.Z, vec.W };
-                    if (Runtime.BinFile.Format == BinFileFormat.MarioKart8Deluxe)
+                    if (Runtime.BinFile.Format != BinFileFormat.MarioKart8Deluxe)
                         Array.Reverse(bytes);
 
                     int flags = BitConverter.ToInt32(bytes, 0); 

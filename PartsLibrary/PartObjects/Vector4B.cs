@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsEditor
 {
-    public struct Vector4B
+    public class Vector4B
     {
         public byte X { get; set; }
         public byte Y { get; set; }

@@ -57,13 +57,25 @@ namespace PartsEditor
         public byte SusTypeFront
         {
             get { return TireFlags.X; }
-            set { TireFlags = new Vector4B(value, TireFlags.Y, 0, 0); }
+            set { TireFlags.X = value; }
         }
 
         public byte SusTypeBack
         {
             get { return TireFlags.Y; }
-            set { TireFlags = new Vector4B(TireFlags.X, value, 0, 0); }
+            set { TireFlags.Y = value; }
+        }
+
+        public byte Unknown3
+        {
+            get { return TireFlags.Z; }
+            set { TireFlags.Z = value; }
+        }
+
+        public byte Unknown4
+        {
+            get { return TireFlags.W; }
+            set { TireFlags.W = value; }
         }
 
         [PartParam(SectionIdentifier.Tire)]

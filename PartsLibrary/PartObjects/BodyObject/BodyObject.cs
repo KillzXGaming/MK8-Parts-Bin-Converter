@@ -30,7 +30,7 @@ namespace PartsEditor
         public WheelAmount WheelType
         {
             get { return (WheelAmount)BodyFlags.Y; }
-            set { BodyFlags = new Vector2S(BodyFlags.Y, (short)value); }
+            set { BodyFlags = new Vector2S(BodyFlags.X, (short)value); }
         }
 
         /// <summary>
