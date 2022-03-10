@@ -161,7 +161,19 @@ namespace PartsEditor
             "Koopa Clown",
             "Splat Buggy",
             "Inkstriker",
-        //    "Master Cycle Zero", Program.R.GetBitmap("Karts.MasterCycleZero.png")),
+            "Master Cycle Zero",
+            "Unknown1",
+            "Unknown2",
+            "Unknown3",
+            "Unknown4",
+            "Unknown5",
+            "Unknown6",
+            "Unknown7",
+            "Unknown8",
+            "Unknown9",
+            "Unknown10",
+            "Unknown11",
+            "Unknown12",
         };
 
         private static readonly List<string> tiresCommon = new List<string>()
@@ -187,7 +199,19 @@ namespace PartsEditor
            "GLA Tires",
            "Triforce Tires",
            "Leaf Tires",
-           "Ancient Tires"
+           "Ancient Tires",
+            "Unknown1",
+            "Unknown2",
+            "Unknown3",
+            "Unknown4",
+            "Unknown5",
+            "Unknown6",
+            "Unknown7",
+            "Unknown8",
+            "Unknown9",
+            "Unknown10",
+            "Unknown11",
+            "Unknown12",
         };
 
         private static readonly List<string> glidersCommon = new List<string>()
@@ -207,6 +231,18 @@ namespace PartsEditor
             "Hylian Kite",
             "Paper Glider",
             "Paraglider ",
+            "Unknown1",
+            "Unknown2",
+            "Unknown3",
+            "Unknown4",
+            "Unknown5",
+            "Unknown6",
+            "Unknown7",
+            "Unknown8",
+            "Unknown9",
+            "Unknown10",
+            "Unknown11",
+            "Unknown12",
         };
 
         private static readonly List<string> driversCommon = new List<string>()
@@ -254,6 +290,18 @@ namespace PartsEditor
             "King Boo",
             "Inkling Girl",
             "Inkling Boy",
+            "Unknown1",
+            "Unknown2",
+            "Unknown3",
+            "Unknown4",
+            "Unknown5",
+            "Unknown6",
+            "Unknown7",
+            "Unknown8",
+            "Unknown9",
+            "Unknown10",
+            "Unknown11",
+            "Unknown12",
         };
     }
 }
