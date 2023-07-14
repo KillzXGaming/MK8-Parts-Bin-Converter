@@ -108,6 +108,7 @@ namespace PartsInjector
             var bodyParts = Runtime.GetBodyParts();
             var tireParts = Runtime.GetTireParts();
             var gliderParts = Runtime.GetGliderParts();
+            var driverParts = Runtime.GetDriverParts();
 
             int bodyIndex = 0;
             foreach (var bod in bodyParts)
@@ -166,6 +167,18 @@ namespace PartsInjector
                 string json = JsonConvert.SerializeObject(glider, Formatting.Indented, converters.ToArray());
                 File.WriteAllText(Path.Combine(folder, $"{glider.PartName}.json"), json);
             }
+
+            int driverIndex = 0;
+            foreach (var driver in driverParts)
+            {
+                Runtime.DriverIndex = driverIndex++;
+
+                string folder = Path.Combine("Driver", driver.PartName);
+                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+
+                string json = JsonConvert.SerializeObject(driver, Formatting.Indented, converters.ToArray());
+                File.WriteAllText(Path.Combine(folder, $"{driver.PartName}.json"), json);
+            }
         }
 
         static void Inject(string fileName, string outputFilePath)
@@ -182,6 +195,7 @@ namespace PartsInjector
             var bodyParts = Runtime.GetBodyParts();
             var tireParts = Runtime.GetTireParts();
             var gliderParts = Runtime.GetGliderParts();
+            var driverParts = Runtime.GetDriverParts();
 
             for (int i = 0; i < bodyParts.Count; i++)
             {
@@ -266,6 +280,21 @@ namespace PartsInjector
                     gliderParts[i] = JsonConvert.DeserializeObject<GliderObject>(File.ReadAllText(partFileName), converters.ToArray());
                     gliderParts[i].UpdateSetters();
                     Console.WriteLine($"Injecting Glider {name}");
+                }
+            }
+
+            for (int i = 0; i < driverParts.Count; i++)
+            {
+                string name = driverParts[i].PartName;
+
+                string partFileName = $"Driver/{name}/{name}.json";
+                if (File.Exists(partFileName))
+                {
+                    Runtime.GliderIndex = i;
+
+                    driverParts[i] = JsonConvert.DeserializeObject<DriverObject>(File.ReadAllText(partFileName), converters.ToArray());
+                    driverParts[i].UpdateSetters();
+                    Console.WriteLine($"Injecting Driver {name}");
                 }
             }
 
