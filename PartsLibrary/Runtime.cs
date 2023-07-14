@@ -230,7 +230,7 @@ namespace PartsEditor
             "Gold Glider",
             "Hylian Kite",
             "Paper Glider",
-            "Paraglider ",
+            "Paraglider",
             "Unknown1",
             "Unknown2",
             "Unknown3",

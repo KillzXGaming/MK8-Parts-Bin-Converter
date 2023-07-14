@@ -148,11 +148,11 @@ namespace PartsInjector
             {
                 Runtime.TireIndex = tireIndex++;
 
-                if (!Directory.Exists($"Tire/{tire.PartName}"))
-                    Directory.CreateDirectory($"Tire/{tire.PartName}");
+                string folder = Path.Combine("Tire", tire.PartName);
+                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
 
                 string json = JsonConvert.SerializeObject(tire, Formatting.Indented, converters.ToArray());
-                File.WriteAllText($"Tire/{tire.PartName}/{tire.PartName}.json", json);
+                File.WriteAllText(Path.Combine(folder, $"{tire.PartName}.json"), json);
             }
 
             int gliderIndex = 0;
@@ -160,11 +160,11 @@ namespace PartsInjector
             {
                 Runtime.GliderIndex = gliderIndex++;
 
-                if (!Directory.Exists($"Glider/{glider.PartName}"))
-                    Directory.CreateDirectory($"Glider/{glider.PartName}");
+                string folder = Path.Combine("Glider", glider.PartName);
+                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
 
                 string json = JsonConvert.SerializeObject(glider, Formatting.Indented, converters.ToArray());
-                File.WriteAllText($"Glider/{glider.PartName}/{glider.PartName}.json", json);
+                File.WriteAllText(Path.Combine(folder, $"{glider.PartName}.json"), json);
             }
         }
 
